@@ -8,18 +8,32 @@ let input = `5
 let originArr = [];
 let sumArr = [];
 let sum = 0;
+let answer = '';
 for(let i=0; i<=parseInt(input.split('\n')[0]); i++){
     if(i != 0)
         originArr.push(input.split('\n')[i].split(' ').map(Number));
 }
 for(let i=0; i<originArr.length; i++){
-    originArr[i].shift();
+    let numKind = originArr[i].shift();
     originArr[i].forEach(x =>{
         sum += x;
     });
     avg = sum/originArr[i].length;
-    sumArr.push(avg);
+    sum = 0;
+
+    originArr[i].forEach(x => {
+        if(x > avg){
+            sum += 1;
+        }
+    });
+    if(i != originArr.length-1){
+        answer += `${((sum/numKind)*100).toFixed(3)}%\n`;
+    }else{
+        answer += `${((sum/numKind)*100).toFixed(3)}%`;
+    }
     sum = 0;
 }
-console.log(originArr);
-console.log(sumArr);
+console.log(answer);
+// 1. 점수로만 이뤄진 배열 만들기
+// 2. 평균 구하기
+// 3. 점수 중에서 평균보다 큰 점수의 비율 구하기
