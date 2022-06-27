@@ -1,12 +1,27 @@
-//let input = require('fs').readFileSync('/dev/stdin').toString().trim();
-let input = `2
-1
-3
-2
-3`;
+let input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n').map(num => Number(num));
+// let input = `2
+// 1
+// 3
+// 2
+// 3`.split('\n').map(num => Number(num));
 
-let nArrNumber = Number(n);
-let newArr = arr.map((e) => e.split(" "));
-let nAnswer = "";
+const T = input.shift();
+for(let i=0; i<T; i++){
+    const a = input.shift();
+    const b = input.shift();
+    const apartment = [];
 
-console.log(nAnswer);
+    for(let i=0; i<=a; i++){
+        apartment.push([1]);
+        for(let j=1; j<b; j++){
+            if(i === 0){
+                apartment[i].push(j+1);
+            }else{
+                apartment[i].push(apartment[i][j-1]+apartment[i-1][j]);
+            }
+        }
+    }
+    const floor = a;
+    const room = b-1;
+    console.log(apartment[floor][room]);
+}
