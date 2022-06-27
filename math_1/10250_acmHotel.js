@@ -5,8 +5,8 @@ let newArr = arr.map((e) => e.split(" "));
 let nAnswer = "";
 
 for (let i = 0; i < nArrNumber; i++) {
-  let H = newArr[i][0],
-    N = newArr[i][2];
+  let H = newArr[i][0];
+  let N = newArr[i][2];
 
   let answerH = N % H;
   if (answerH === 0) {
