@@ -1,4 +1,4 @@
-package input_output;
+package BOJ;
 
 public class boj25083 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package input_output;
+package BOJ;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
