@@ -8,5 +8,6 @@ public class boj11718 {
         while(sc.hasNextLine()){
             System.out.println(sc.nextLine());
         }
+        sc.close();
     }
 }
