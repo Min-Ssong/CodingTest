@@ -1,4 +1,4 @@
-package BOJ;
+package BOJ.javaAlgo;
 
 public class boj5337 {
     public static void main(String[] args) {

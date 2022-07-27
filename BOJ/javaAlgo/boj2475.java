@@ -1,4 +1,4 @@
-package BOJ;
+package BOJ.javaAlgo;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
