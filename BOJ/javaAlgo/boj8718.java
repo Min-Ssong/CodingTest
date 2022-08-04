@@ -68,7 +68,7 @@ public class boj8718 {
                 }
             }
         }
- 
+        
         sc.close();
     }
 }
