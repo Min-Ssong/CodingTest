@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class boj8718 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int x = sc.nextInt() * 1000;
-        int k = sc.nextInt() * 1000;
+        int x = sc.nextInt();
+        int k = sc.nextInt();
 
         if (7*k <= x) {
             System.out.println(String.valueOf(7*k*1000));
