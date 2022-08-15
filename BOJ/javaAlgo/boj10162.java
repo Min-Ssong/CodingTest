@@ -14,22 +14,27 @@ public class boj10162 {
         int A = 300;
         int B = 60;
         int C = 10;
-        int i = 1;
-        int result = 0;
+        int[] result = {0, 0, 0};
 
         int T = Integer.parseInt(br.readLine());
         if ( T % 10 == 0 ) {
-            while ( true ) {
-                
-                if ( T - A * i > 0 ) {
-
-                    i = i + 1;
-                } else {
-                    break;
+            while ( T > 0 ) {
+                if ( T >= A ) {
+                    T = T - A;
+                    result[0] += 1;
+                } else if ( T >= B ) {
+                    T = T - B;
+                    result[1] += 1;
+                } else if ( T >= C ) {
+                    T = T - C;
+                    result[2] += 1;
                 }
             }
+            for (int i : result) {
+                bw.write(i + " ");
+            }
         } else {
-            bw.write(-1);
+            bw.write(String.valueOf(-1));
         }
 
         bw.flush();
