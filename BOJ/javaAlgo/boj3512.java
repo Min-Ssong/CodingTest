@@ -1,35 +1,33 @@
 package BOJ.javaAlgo;
 
-import java.util.Scanner;
+import java.io.*;
 
 public class boj3512 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int allRoomNum = sc.nextInt();
-        int roomPrice = sc.nextInt();
-        float[] result = new float[2];
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String allInput = br.readLine();
+        int len = Integer.parseInt(allInput.split(" ")[0]);
+        Double price = Double.parseDouble(allInput.split(" ")[1]);
+        int allWidth = 0;
+        int bedRoomWidht = 0;
+        Double balconyWidth = 0.0;
+        for ( int i = 0; i < len; i++ ){
+            String roomInfo = br.readLine();
+            int roomWidth = Integer.parseInt(roomInfo.split(" ")[0]);
+            String roomName = roomInfo.split(" ")[1];
 
-        float resultPrice = 0.0f;
-
-        for( int i = 0; i < allRoomNum; i++ ) {
-            float roomNum = sc.nextFloat();
-            String roomName = sc.next();
-            result[0] += roomNum;
-
-            if( roomName.equals("bedroom") ) {
-                result[1] += roomNum;
-            } 
-            
-            if ( roomName.equals("balcony") ) {
-                resultPrice += roomNum/2;
-            } else {
-                resultPrice += roomNum;
+            allWidth += roomWidth;
+            if ( roomName.equals("bedroom") ) {
+                bedRoomWidht += roomWidth;
+            }else if ( roomName.equals("balcony") ) {
+                balconyWidth += Double.parseDouble(String.valueOf(roomWidth)) / 2;
             }
         }
-        System.out.println((int)result[0]);
-        System.out.println((int)result[1]);
-        System.out.printf("%.6f", resultPrice * roomPrice);
-        
-        sc.close();
+        System.out.printf("%d\n%d\n",
+            allWidth,
+            bedRoomWidht
+        );
+        System.out.println(price * (Double.parseDouble(String.valueOf(allWidth)) - balconyWidth));
+        br.close();
     }
 }
