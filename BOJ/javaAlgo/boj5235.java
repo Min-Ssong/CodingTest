@@ -49,6 +49,7 @@ public class boj5235 {
                 }
             }
         }
+        sc.close();
     }
 }
 

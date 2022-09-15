@@ -30,5 +30,6 @@ public class boj5220 {
                 System.out.println("Corrupt");
             }
         }
+        sc.close();
     }
 }
