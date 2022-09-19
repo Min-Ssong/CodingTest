@@ -1,4 +1,4 @@
-// package programmers;
+package programmers;
 
 // class Solution {
 //     public String solution(int num) {
@@ -13,3 +13,10 @@
 //         System.out.print(sol.solution(num));
 // 	}
 // }
+
+public class pr01 {
+    public static void main(String[] args) {
+        int num = 4;
+        System.out.print((num % 2 != 0) ? "Odd" : "Even");
+    }
+}
