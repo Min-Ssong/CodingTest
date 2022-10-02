@@ -22,11 +22,9 @@ public class boj12840 {
                 if ( T.equals("1") ) { 
                     time = (time + sec) % 86400;
                 } else {
-                    time -= sec;
-                    if ( time < 0 ) {
-                        time += sec;
-                    }
+                    time = (time - sec) % 86400;
                 }
+                if(time < 0) time += 24 * 3600;
             }
         }
         System.out.print(sb);
