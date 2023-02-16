@@ -2,21 +2,19 @@ import time
 start_time = time.time()
 
 # 문제
-n = int(input())
-h = list(map(int, input().split()))
+N = int(input())
+cards = list(map(int, input().split(' ')))
 
-ans = 0
-maxHill = 0
 count = 0
+i = 1
 
-for hill in h:
-  if maxHill < hill:
-    maxHill = hill
-    count = 0
+for card in cards:
+  if card == i:
+    i += 1
   else:
     count += 1
-  ans = max(ans, count)
-print(ans)
+
+print(count)
 # 문제
 
 end_time = time.time()
