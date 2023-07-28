@@ -6,8 +6,4 @@ public class pr181874 {
             return myString.toLowerCase().replace('a', 'A');
         }
     }
-    public static void main(String[] args) {
-        pr181874 pr = new pr181874();
-        pr.solution("abstract algebra");
-    }
 }
