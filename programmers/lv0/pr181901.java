@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 public class pr181901 {
     public int[] solution(int n, int k) {
         int[] answer = new int[n/k];

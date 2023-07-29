@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 import java.util.ArrayList;
 
 public class pr181885 {

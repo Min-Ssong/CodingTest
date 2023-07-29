@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 public class pr181829 {
     class Solution {
         public int solution(int[] date1, int[] date2) {

@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 public class pr181883 {
     class Solution {
         public int[] solution(int[] arr, int[][] queries) {

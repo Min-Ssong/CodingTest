@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 public class pr181875 {
     public String[] solution(String[] strArr) {
         for(int i = 0; i < strArr.length; i++){

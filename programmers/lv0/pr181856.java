@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 public class pr181856 {
     public int solution(int[] arr1, int[] arr2) {
         int answer = 0;

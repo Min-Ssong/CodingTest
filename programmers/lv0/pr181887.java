@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 public class pr181887 {
     class Solution {
         public int solution(int[] num_list) {

@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 public class pr181839 {
     public int solution(int a, int b) {
         int answer = 0;

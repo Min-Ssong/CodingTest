@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 public class pr181874 {
     class Solution {
         public String solution(String myString) {

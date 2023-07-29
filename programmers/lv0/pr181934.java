@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 public class pr181934 {
     class Solution {
         public int solution(String ineq, String eq, int n, int m) {

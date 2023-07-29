@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 import java.util.Stack;
 
 public class pr181860 {

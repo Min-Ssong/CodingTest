@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 public class pr181852 {
     public int[] solution(int[] num_list) {
         int[] answer = new int[num_list.length - 5];

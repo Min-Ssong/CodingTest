@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 public class pr181895 {
     class Solution {
         public int[] solution(int[] arr, int[][] intervals) {        

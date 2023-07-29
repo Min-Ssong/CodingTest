@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 import java.util.Arrays;
 
 public class pr181866 {

@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 public class pr181906 {
     public int solution(String my_string, String is_prefix) {
         int a = my_string.indexOf(is_prefix);

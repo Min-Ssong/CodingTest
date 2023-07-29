@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 public class pr181915 {
     public String solution(String my_string, int[] index_list) {
         StringBuffer sb = new StringBuffer();

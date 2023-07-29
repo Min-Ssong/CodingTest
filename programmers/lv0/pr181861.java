@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 public class pr181861 {
     public int[] solution(int[] arr) {
         int len = 0;

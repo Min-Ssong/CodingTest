@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 public class pr181911 {
     public String solution(String[] my_strings, int[][] parts) {
         String answer = "";

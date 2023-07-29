@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 public class pr181853 {
     public int[] solution(int[] num_list) {
         int[] answer = new int[5];

@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 public class pr181914 {
     class Solution {
         public int solution(String number) {

@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 public class pr181864 {
     public int solution(String myString, String pat) {
         String newMyString = "";

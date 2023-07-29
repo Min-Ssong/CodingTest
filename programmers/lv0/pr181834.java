@@ -1,5 +1,3 @@
-package programmers.lv0;
-
 public class pr181834 {
     public String solution(String myString) {
         return myString.replaceAll("[a-k]", "l");
