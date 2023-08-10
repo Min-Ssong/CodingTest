@@ -1,26 +1,25 @@
-import java.util.ArrayList;
-
+import java.util.Stack;
 public class pr181918 {
     class Solution {
         public int[] solution(int[] arr) {
-            ArrayList<Integer> temp = new ArrayList<Integer>();
-            for(int i = 0; i < arr.length; i++){
-                if(temp.size() != 0 && temp.get(temp.size() - 1) >= arr[i]){
-                    temp.remove(temp.size() - 1);
-                }
-                
-                if(temp.size() == 0){
-                    temp.add(arr[i]);
-                } else if(temp.size() != 0 && temp.get(temp.size() - 1) < arr[i]){
-                    temp.add(arr[i]);
+            Stack<Integer> stack = new Stack<>();
+            int i = 0;
+            
+            while (i < arr.length) {
+                if (stack.isEmpty() || stack.peek() < arr[i]) {
+                    stack.push(arr[i]);
+                    i += 1;
+                } else {
+                    stack.pop();
                 }
             }
             
-            int[] result = new int[temp.size()];
-            for(int i = 0; i < result.length; i++){
-                result[i] = temp.get(i);
+            int[] stk = new int[stack.size()];
+            for (int j = 0; j < stk.length; j++) {
+                stk[j] = stack.get(j);
             }
-            return result;
+
+            return stk;
         }
     }
 }
