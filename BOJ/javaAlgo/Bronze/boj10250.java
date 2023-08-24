@@ -1,4 +1,4 @@
-package BOJ.javaAlgo.B3;
+package BOJ.javaAlgo.Bronze;
 
 import java.io.*;
 

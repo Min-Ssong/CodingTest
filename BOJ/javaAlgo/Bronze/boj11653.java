@@ -1,4 +1,4 @@
-package BOJ.javaAlgo.B1;
+package BOJ.javaAlgo.Bronze;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
