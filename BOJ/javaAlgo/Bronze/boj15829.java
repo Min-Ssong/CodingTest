@@ -3,7 +3,6 @@ package BOJ.javaAlgo.Bronze;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.math.BigInteger;
 
 public class boj15829 {
     public static void main(String[] args) throws IOException {
@@ -11,14 +10,12 @@ public class boj15829 {
 		int L = Integer.parseInt(br.readLine());
 		String str = br.readLine();
 		
-		int num = 0;
-		BigInteger result = new BigInteger("0");
+		int num = 1;
+		long result = 0;
 		for(char ch : str.toCharArray()){
-            System.out.println(Double.toString((ch - 96) * Math.round(Math.pow(31, num))));
-			num += 1;
+			result += ((ch - 96) * num) % 1234567891;
+			num = (num * 31) % 1234567891;
 		}
-		System.out.println(result);
+		System.out.println(result % 1234567891);
     }
 }
-// 50
-// abcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcde
