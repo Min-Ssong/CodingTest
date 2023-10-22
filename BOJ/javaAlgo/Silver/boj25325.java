@@ -22,13 +22,25 @@ public class boj25325 {
                     studentMap.put(key, ++value);
                 }
             }
-            
             List<Map.Entry<String, Integer>> list = new ArrayList<>(studentMap.entrySet());
-            Collections.sort(list, new Comparator<Map.Entry<String, Integer>>(){
-            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+
+            // 1. 람다 표현식 사용하기
+            list.sort((o1, o2) -> {
                 int nameCompare = o2.getValue().compareTo(o1.getValue());
                 return nameCompare != 0 ? nameCompare : o1.getKey().compareTo(o2.getKey());
-            }
+            });
+
+            // 2. Comparator.comparing()과 thenComparing() 사용하기
+            list.sort(Comparator.comparing(Map.Entry<String, Integer>::getValue, Comparator.reverseOrder())
+                    .thenComparing(Map.Entry::getKey));
+
+
+            // 3. Collections.sort()에 Comparator 직접 전달하기
+            Collections.sort(list, new Comparator<Map.Entry<String, Integer>>(){
+                public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+                    int nameCompare = o2.getValue().compareTo(o1.getValue());
+                    return nameCompare != 0 ? nameCompare : o1.getKey().compareTo(o2.getKey());
+                }
             });
             
             for (Entry<String, Integer> entry : list) {
