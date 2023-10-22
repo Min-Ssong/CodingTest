@@ -31,14 +31,9 @@ public class boj25325 {
             }
             });
             
-            Map<String, Integer> sortedMap = new LinkedHashMap<String, Integer>();
-            for(Entry<String, Integer> entry : list){
-                sortedMap.put(entry.getKey(), entry.getValue());
-            }
-            
-            for(Entry<String, Integer> entry : sortedMap.entrySet()){
+            for (Entry<String, Integer> entry : list) {
                 System.out.println(entry.getKey() + " " + entry.getValue());
-            }
+            }            
         }
     }
 }
