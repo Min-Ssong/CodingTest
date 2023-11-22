@@ -1,0 +1,11 @@
+import java.util.*;
+public class Solution{
+    public static int solution(int a, int b, int n){
+        int answer = 0;
+        while(n >= a){
+            answer += n / a * b;
+            n = n / a * b + n % a;
+        }
+        return answer;
+    }
+}
