@@ -6,9 +6,7 @@ public class Main {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int l = Integer.parseInt(br.readLine());
-        int result = l / 5;
-        if( l % 5 != 0 ) result += 1;
-        System.out.println(result);
+        System.out.println(l % 5 == 0 ? l / 5 : ( l / 5 ) + 1);
         br.close();
     }
 }
