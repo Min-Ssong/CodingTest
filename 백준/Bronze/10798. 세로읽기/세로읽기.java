@@ -1,36 +1,25 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
-public class Main {
-	public static void main(String[] args) throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
-		String[][] result = new String[5][15];
-		for(int i = 0; i < result.length; i++){
-			for(int j = 0; j < result[i].length; j++){
-				result[i][j] = "";
-			}
-		}
-		
-		for(int i = 0; i < result.length; i++){
-			StringTokenizer st = new StringTokenizer(br.readLine());
-			String[] splitArr = st.nextToken().split("");
-			for(int j = 0; j < splitArr.length; j++){
-				result[i][j] = splitArr[j];
-			}
-		}
-		
-		for(int i = 0; i < result[0].length; i++){
-			for(int j = 0; j < result.length; j++){
-				if(!"".equals(result[j][i])){
-					sb.append(result[j][i]);
-				}
-			}
-		}
-		System.out.println(sb);
-		br.close();
-	}
+public class Main{
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        char[][] grid = new char[5][15];
+        
+        for(int i = 0; i < grid.length; i++){
+            char[] words = br.readLine().toCharArray();
+            for(int j = 0; j < words.length; j++){
+                grid[i][j] = words[j];
+            }
+        }
+        
+        StringBuilder resultWord = new StringBuilder();
+        for(int i = 0; i < grid[0].length; i++){
+            for(int j = 0; j < grid.length; j++){
+                if( grid[j][i] != '\u0000' ) resultWord.append(grid[j][i]);
+            }
+        }
+        
+        System.out.println(resultWord.toString());
+    }
 }
