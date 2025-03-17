@@ -1,28 +1,37 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws IOException{
+    static int count = 0;
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int T = Integer.parseInt(br.readLine());
-		for(int i = 0; i < T; i++){
-			System.out.println(isPalindrome(br.readLine()));
-		}
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        int N = Integer.parseInt(br.readLine());
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < N; i++) {
+            sb.append(isPalindrome(br.readLine().toCharArray()) + "\n");
+        }
+        bw.write(sb.toString());
+        bw.flush();
+        bw.close();
+        br.close();
     }
 
-    public static int isPalindrome(String str){
-		return recursion(str, 0, str.length() - 1, 0);
-	}
+    public static String isPalindrome(char[] ch){
+        count = 0;
+        return String.valueOf(recursion(ch, 0, ch.length - 1)) +" "+ count;
+    }
 
-    public static int recursion(String str, int l, int r, int count){
-		count++;
-		if(l >= r){
-			System.out.print(1 + " ");
-			return count;
-		} else if(str.charAt(l) != str.charAt(r)){
-			System.out.print(0 + " ");
-			return count;
-		} else return recursion(str, l+1, r-1, count);
-	}
+    public static int recursion(char[] ch, int l, int r){
+        count++;
+
+        if( l >= r ) {
+            return 1;
+        } else if( ch[l] != ch[r] ){
+            return 0;
+        } else {
+            return recursion(ch, l+1, r-1);
+        }
+    }
 }
