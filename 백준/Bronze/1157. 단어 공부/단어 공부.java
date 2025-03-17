@@ -10,15 +10,10 @@ public class Main {
         char[] words = br.readLine().toUpperCase().toCharArray();
         Map<Character, Integer> map = new HashMap<>();
         for (char word : words) {
-            if( map.containsKey(word) ){
-                int count = map.get(word) + 1;
-                map.put(word, count);
-            } else {
-                map.put(word, 1);
-            }
+            map.put(word, map.getOrDefault(word, 0) + 1);
         }
         
-        int max = 0;
+        int max = -1;
         char result = '?';
         for (Map.Entry<Character, Integer> entry : map.entrySet()) {
             if(entry.getValue() > max){
