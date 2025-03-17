@@ -1,33 +1,44 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Set;
-import java.util.TreeSet;
+import java.io.*;
+import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws IOException{
+    static int count = 0;
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
-		String NM = br.readLine();
-		int N = Integer.parseInt(NM.split(" ")[0]);
-		int M = Integer.parseInt(NM.split(" ")[1]);
-		
-		int num = 0;
-		Set<String> tempSet = new TreeSet<String>();
-		Set<String> resultSet = new TreeSet<String>();
-		for(int i = 0; i < N + M; i++){
-			String name = br.readLine();
-			if(i < N){
-				tempSet.add(name);
-			}else if(i >= N && tempSet.contains(name)){
-				resultSet.add(name);
-				num += 1;
-			}
-		}
-		sb.insert(0, num + "\n");
-		for(String str : resultSet){
-			sb.append(str).append("\n");
-		}
-		System.out.println(sb.toString());
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        StringTokenizer numSt = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(numSt.nextToken());
+        int M = Integer.parseInt(numSt.nextToken());
+
+        Set<String> set = new HashSet<>();
+        int count = 0;
+        List<String> overlap = new ArrayList<>();
+        for(int i = 0; i < N + M; i++){
+            String name = br.readLine();
+            if( set.contains(name) ){
+                overlap.add(name);
+                count++;
+            }
+
+            set.add(name);
+        }
+
+        Collections.sort(overlap);
+        
+        StringBuilder sb = new StringBuilder();
+        sb.append(count).append("\n");
+        for(int i = 0; i < overlap.size(); i++){
+            if(i == overlap.size() - 1) {
+                sb.append(overlap.get(i));
+                break;
+            }
+
+            sb.append(overlap.get(i)).append("\n");
+        }
+        bw.write(sb.toString());
+        bw.flush();
+        bw.close();
+        br.close();
     }
 }
