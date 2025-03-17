@@ -1,19 +1,22 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class Main {
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		long N = Long.parseLong(br.readLine());
-		System.out.println(facto(N));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        // 입력값 처리
+        int n = Integer.parseInt(br.readLine());
+
+        // 팩토리얼 계산 및 출력
+        bw.write(String.valueOf(fact(n)));
+        bw.flush();
+        bw.close();
+        br.close();
     }
 
-    public static long facto(long num){
-		if(num <= 1){
-			return 1;
-		} else {
-			return num * facto(num - 1);
-		}
-	}
+    public static long fact(int n) {
+        if (n == 0) return 1; // Base Case
+        return n * fact(n - 1); // Recursive Step
+    }
 }
