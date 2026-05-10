@@ -1,8 +1,6 @@
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
-public class Solution {
+public class Solution{
     public static int[] solution(int[] numbers){
         Set<Integer> resultSet = new HashSet<>();
         for(int i = 0; i < numbers.length; i++){
@@ -17,10 +15,5 @@ public class Solution {
                 .mapToInt(Integer::intValue)
                 .sorted()
                 .toArray();
-    }
-    public static void main(String[] args) {
-        int[] numbers = {2,1,3,4,1};
-//        int[] numbers = {5, 0, 2, 7};
-        System.out.println(Arrays.toString(solution(numbers)));
     }
 }
